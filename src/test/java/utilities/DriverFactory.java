@@ -23,7 +23,7 @@ public class DriverFactory {
             driver = new ChromeDriver(options);
         } else if (getBrowser.equalsIgnoreCase("firefox")) {
             FirefoxOptions options = new FirefoxOptions();
-          //  options.addArguments("--headless=new");
+           options.addArguments("--headless=new");
             driver = new FirefoxDriver(options);
         } else if (getBrowser.equalsIgnoreCase("edge")) {
             EdgeOptions options = new EdgeOptions();
