@@ -17,12 +17,12 @@ public class BaseClass {
 
     public BaseClass(WebDriver driver){
         this.driver=driver;
-        driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        executor = (JavascriptExecutor) driver;
+        this.driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+       this.executor = (JavascriptExecutor) driver;
     }
 
     public void click(WebElement element){
-        driverWait.until(ExpectedConditions.elementToBeClickable(element));
+        driverWait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
     public void jsClick(WebElement element){
         executor.executeScript("arguments[0].click();",element);
